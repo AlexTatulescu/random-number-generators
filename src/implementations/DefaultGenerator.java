@@ -5,7 +5,7 @@ import java.util.Random;
 import interfaces.IGenerator;
 
 public class DefaultGenerator implements IGenerator {
-	
+
 	private Random randomGenerator;
 
 	public DefaultGenerator() {
@@ -13,9 +13,11 @@ public class DefaultGenerator implements IGenerator {
 	}
 
 	@Override
-	public void next() {
+	public float next() {
 		Float result = randomGenerator.nextFloat();
 		System.out.print(result + " ");
+
+		return result;
 	}
 
 }

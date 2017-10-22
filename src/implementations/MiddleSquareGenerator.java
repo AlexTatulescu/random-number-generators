@@ -5,22 +5,34 @@ import interfaces.IGenerator;
 public class MiddleSquareGenerator implements IGenerator {
 
 	private Integer seed;
+	private Integer numberOfDigits;
 
 	public MiddleSquareGenerator(Integer seed) {
 		this.seed = seed;
+		this.numberOfDigits = countDigits(seed);
 	}
 
 	@Override
-	public void next() {
+	public float next() {
 
-		Integer numberOfDigits = countDigits(seed);
+		Integer nextNumber = 0;
 
-		if (numberOfDigits % 2 == 0) {
-			Integer nextNumber = ((seed * seed) / pow(10, numberOfDigits/2) % pow(10, numberOfDigits));
-			seed = nextNumber;
-			Float result = (float) nextNumber / pow(10, numberOfDigits);
-			System.out.print(result + " ");
+		nextNumber = ((seed * seed) / pow(10, numberOfDigits / 2) % pow(10, numberOfDigits));
+		if (countDigits(nextNumber) < numberOfDigits) {
+			nextNumber = nextNumber + pow(10, numberOfDigits - 1);
 		}
+
+		if (seed == nextNumber) {
+			seed = nextNumber + numberOfDigits;
+		} else {
+			seed = nextNumber;
+		}
+		
+		Float result = (float) nextNumber / pow(10, numberOfDigits);
+		System.out.print(result + " ");
+		
+		return result;
+
 	}
 
 	public Integer countDigits(Integer number) {

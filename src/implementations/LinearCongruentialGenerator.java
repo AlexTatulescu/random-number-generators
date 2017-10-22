@@ -17,11 +17,13 @@ public class LinearCongruentialGenerator implements IGenerator {
 	}
 
 	@Override
-	public void next() {
+	public float next() {
 			Integer nextNumber = (multiplier * seed + increment) % module;
 			seed = nextNumber;
 			Float result = (float) nextNumber / module;
 			System.out.print(result + " ");
+			
+			return result;
 	}
 	
 }
