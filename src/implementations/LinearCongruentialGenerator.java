@@ -4,30 +4,24 @@ import interfaces.IGenerator;
 
 public class LinearCongruentialGenerator implements IGenerator {
 	
-	private int seed;
-	private int multiplier;
-	private int increment;
-	private int module;
-	private int limit;
-	
-	
+	private Integer seed;
+	private Integer multiplier;
+	private Integer increment;
+	private Integer module;
 
-	public LinearCongruentialGenerator(int seed, int multiplicator, int increment, int module, int limit) {
+	public LinearCongruentialGenerator(Integer seed, Integer multiplicator, Integer increment, Integer module) {
 		this.seed = seed;
 		this.multiplier = multiplicator;
 		this.increment = increment;
 		this.module = module;
-		this.limit = limit;
 	}
 
 	@Override
 	public void next() {
-		System.out.println("Secventa de numere este: ");
-		for(int i = 1; i <= limit; i++){
-			int nextNumber = (multiplier * seed + increment) % module;
+			Integer nextNumber = (multiplier * seed + increment) % module;
 			seed = nextNumber;
-			System.out.println("x" + i + " = " + nextNumber);
-		}
+			Float result = (float) nextNumber / module;
+			System.out.print(result + " ");
 	}
 	
 }
