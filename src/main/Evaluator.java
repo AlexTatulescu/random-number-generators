@@ -21,6 +21,8 @@ public class Evaluator {
 				counter++;
 			}
 		}
+		
+		System.out.println("Total puncte aflate in sfetul de cerc:" + counter);
 
 		Double result = Math.PI - counter / (numberOfPoints / 4);
 

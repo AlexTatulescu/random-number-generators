@@ -14,10 +14,10 @@ public class DefaultGenerator implements IGenerator {
 
 	@Override
 	public float next() {
-		Float result = randomGenerator.nextFloat();
-		System.out.print(result + " ");
 
+		Float result = randomGenerator.nextFloat();
 		return result;
+
 	}
 
 }
