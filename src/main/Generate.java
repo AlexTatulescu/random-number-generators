@@ -1,7 +1,5 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import interfaces.IGenerator;
@@ -19,17 +17,14 @@ public class Generate {
 
 	}
 
-	public List<Float> run(IGenerator generator) {
-
-		List<Float> generatedNumbers = new ArrayList<>();
+	public void run(IGenerator generator) {
 
 		for (Integer i = 0; i < counter; i++) {
-			generatedNumbers.add(generator.next());
+			Float result = generator.next();
+			System.out.println(result + " ");
 		}
 
 		System.out.println();
-
-		return generatedNumbers;
 
 	}
 

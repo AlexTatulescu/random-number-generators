@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Scanner;
+
 import implementations.DefaultGenerator;
 import implementations.LinearCongruentialGenerator;
 import implementations.MiddleSquareGenerator;
@@ -13,14 +15,14 @@ public class Main {
 		IGenerator msg = new MiddleSquareGenerator(5197);
 		IGenerator defg = new DefaultGenerator();
 
-		Generate generate = new Generate();
-		generate.run(lng);
-		generate.run(msg);
+		System.out.print("Introduceti cate puncte se vor folosi pentru evaluare: ");
+
+		Scanner scanner = new Scanner(System.in);
+		Integer numberOfPoints = scanner.nextInt();
+		scanner.close();
 
 		Evaluator evaluator = new Evaluator(defg);
-		evaluator.evaluate(generate.run(defg));
-		evaluator.evaluate(generate.run(msg));
-		evaluator.evaluate(generate.run(lng));
+		evaluator.evaluate(numberOfPoints);
 	}
 
 }

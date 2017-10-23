@@ -36,8 +36,6 @@ public class MiddleSquareGenerator implements IGenerator {
 
 		Float result = (float) nextNumber / pow(10, numberOfDigits);
 
-		System.out.print(result + " ");
-
 		return result;
 
 	}

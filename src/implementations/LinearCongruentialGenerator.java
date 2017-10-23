@@ -23,15 +23,16 @@ public class LinearCongruentialGenerator implements IGenerator {
 	public float next() {
 
 		Integer nextNumber = (multiplier * seed + increment) % module;
+
 		if (bst.find(nextNumber)) {
 			nextNumber = nextNumber + 1;
 		} else {
 			bst.insert(nextNumber);
 		}
-		seed = nextNumber;
-		Float result = (float) nextNumber / module;
 
-		System.out.print(result + " ");
+		seed = nextNumber;
+
+		Float result = (float) nextNumber / module;
 
 		return result;
 
