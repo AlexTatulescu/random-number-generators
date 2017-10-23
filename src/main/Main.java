@@ -19,6 +19,8 @@ public class Main {
 
 		Evaluator evaluator = new Evaluator(defg);
 		evaluator.evaluate(generate.run(defg));
+		evaluator.evaluate(generate.run(msg));
+		evaluator.evaluate(generate.run(lng));
 	}
 
 }

@@ -21,8 +21,6 @@ public class Generate {
 
 	public List<Float> run(IGenerator generator) {
 
-		System.out.println("Secventa de numere generate este: ");
-
 		List<Float> generatedNumbers = new ArrayList<>();
 
 		for (Integer i = 0; i < counter; i++) {

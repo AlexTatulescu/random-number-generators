@@ -1,15 +1,18 @@
 package implementations;
 
+import data_structure.BinarySearchTree;
 import interfaces.IGenerator;
 
 public class MiddleSquareGenerator implements IGenerator {
 
-	private Integer seed;
-	private Integer numberOfDigits;
+	private Integer seed = 0;
+	private Integer numberOfDigits = 0;
+	private BinarySearchTree bst;
 
 	public MiddleSquareGenerator(Integer seed) {
 		this.seed = seed;
 		this.numberOfDigits = countDigits(seed);
+		bst = new BinarySearchTree();
 	}
 
 	@Override
@@ -18,19 +21,23 @@ public class MiddleSquareGenerator implements IGenerator {
 		Integer nextNumber = 0;
 
 		nextNumber = ((seed * seed) / pow(10, numberOfDigits / 2) % pow(10, numberOfDigits));
+
+		if (bst.find(nextNumber)) {
+			nextNumber = nextNumber + 1;
+		} else {
+			bst.insert(nextNumber);
+		}
+
 		if (countDigits(nextNumber) < numberOfDigits) {
 			nextNumber = nextNumber + pow(10, numberOfDigits - 1);
 		}
 
-		if (seed == nextNumber) {
-			seed = nextNumber + numberOfDigits;
-		} else {
-			seed = nextNumber;
-		}
-		
+		seed = nextNumber;
+
 		Float result = (float) nextNumber / pow(10, numberOfDigits);
+
 		System.out.print(result + " ");
-		
+
 		return result;
 
 	}
