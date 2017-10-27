@@ -26,9 +26,9 @@ public class LinearCongruentialGenerator implements IGenerator {
 
 		if (bst.find(nextNumber)) {
 			nextNumber = nextNumber + 1;
-		} else {
-			bst.insert(nextNumber);
 		}
+		
+		bst.insert(nextNumber);
 
 		seed = nextNumber;
 

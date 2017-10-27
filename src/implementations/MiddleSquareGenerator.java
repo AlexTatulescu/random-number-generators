@@ -24,11 +24,11 @@ public class MiddleSquareGenerator implements IGenerator {
 
 		if (bst.find(nextNumber)) {
 			nextNumber = nextNumber + 1;
-		} else {
-			bst.insert(nextNumber);
 		}
+		
+		bst.insert(nextNumber);
 
-		if (countDigits(nextNumber) < numberOfDigits) {
+		if (nextNumber < pow(10, numberOfDigits - 1)) {
 			nextNumber = nextNumber + pow(10, numberOfDigits - 1);
 		}
 

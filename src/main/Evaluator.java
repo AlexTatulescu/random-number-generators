@@ -10,7 +10,7 @@ public class Evaluator {
 		this.generator = generator;
 	}
 
-	public void evaluate(Integer numberOfPoints) {
+	public double evaluate(Integer numberOfPoints) {
 
 		Integer counter = 0;
 		Point origin = new Point(0, 0);
@@ -21,13 +21,15 @@ public class Evaluator {
 				counter++;
 			}
 		}
-		
+
 		System.out.println("Total puncte aflate in sfetul de cerc:" + counter);
 
 		Double result = Math.PI - counter / (numberOfPoints / 4);
 
 		System.out.println();
 		System.out.println("Raportul generat este: " + result);
+
+		return result;
 	}
 
 }
