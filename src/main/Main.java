@@ -20,19 +20,19 @@ public class Main {
 		generate.run(msg);
 		generate.run(defg);
 
-//		System.out.print("Introduceti cate puncte se vor folosi pentru evaluare: ");
-//		Scanner scanner = new Scanner(System.in);
-//		Integer numberOfPoints = scanner.nextInt();
-//		scanner.close();
-//
-//		Evaluator evaluator1 = new Evaluator(defg);
-//		evaluator1.evaluate(numberOfPoints);
-//
-//		Evaluator evaluator2 = new Evaluator(msg);
-//		evaluator2.evaluate(numberOfPoints);
-//		
-//		Evaluator evaluator3 = new Evaluator(lng);
-//		evaluator3.evaluate(numberOfPoints);
+		System.out.print("Introduceti cate puncte se vor folosi pentru evaluare: ");
+		Scanner scanner = new Scanner(System.in);
+		Integer numberOfPoints = scanner.nextInt();
+		scanner.close();
+
+		Evaluator evaluator1 = new Evaluator(defg);
+		evaluator1.evaluate(numberOfPoints);
+
+		Evaluator evaluator2 = new Evaluator(msg);
+		evaluator2.evaluate(numberOfPoints);
+		
+		Evaluator evaluator3 = new Evaluator(lng);
+		evaluator3.evaluate(numberOfPoints);
 	}
 
 }
