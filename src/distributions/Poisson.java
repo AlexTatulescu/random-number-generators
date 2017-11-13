@@ -6,31 +6,29 @@ import interfaces.IGenerator;
 
 public class Poisson implements IGenerator {
 
-	private Integer k;
-	private Float p;
 	private Random randomNumber;
-	private Float L;
-	@SuppressWarnings("unused")
-	private Float lambda;
+	private double L;
+	private Double lambda;
 	private Integer n;
 
-	public Poisson(Integer n, Float lambda) {
-		this.k = 0;
-		this.p = 1f;
+	public Poisson(Integer n, Double lambda) {
 		this.n = n;
 		this.lambda = lambda;
 		this.randomNumber = new Random();
-		this.L = (float) Math.pow(Math.E, lambda);
+		this.L = 1 / (Math.pow(Math.E, this.lambda));
 	}
 
 	@Override
 	public float next() {
-		do {
-			k++;
-			p = p * randomNumber.nextFloat();
-		} while (p > L && k <= n);
 
-		Float result = (float) (k - 1) / (n);
+		int k = 0;
+		float p = 1f;
+
+		do {
+			k = k + 1;
+			p = p * randomNumber.nextFloat();
+		} while (p > L && k < n);
+		Float result = (k - 1) / (float) n;
 
 		return result;
 	}

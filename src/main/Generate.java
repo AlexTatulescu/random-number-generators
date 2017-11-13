@@ -20,9 +20,11 @@ public class Generate {
 	public void run(IGenerator generator) {
 
 		System.out.println("Numerele generate sunt: ");
-		
+
 		for (Integer i = 0; i < counter; i++) {
+
 			Float result = generator.next();
+
 			System.out.print(result + " ");
 		}
 
