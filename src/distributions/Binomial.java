@@ -28,7 +28,7 @@ public class Binomial implements IGenerator {
 			}
 		}
 
-		Float result = (float) (x / (n - 1));
+		Float result = (float) x / (n - 1);
 
 		return result;
 	}

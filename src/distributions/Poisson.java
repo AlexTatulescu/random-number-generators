@@ -30,7 +30,7 @@ public class Poisson implements IGenerator {
 			p = p * randomNumber.nextFloat();
 		} while (p > L && k <= n);
 
-		Integer result = (k - 1) / (n);
+		Float result = (float) (k - 1) / (n);
 
 		return result;
 	}
